@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Horoscope</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Language Selection Section -->
+        <div class="section language-section show" id="language-section">
+            <h1>🌟 Daily Horoscope 🌟</h1>
+            <h3>Choose Your Language</h3>
+            <div class="language-buttons">
+                <button class="language-btn" data-lang="en">
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+                <button class="language-btn" data-lang="hi">
+                    <span class="flag">🇮🇳</span>
+                    <span>हिन्दी</span>
+                </button>
+                <button class="language-btn" data-lang="np">
+                    <span class="flag">🇳🇵</span>
+                    <span>नेपाली</span>
+                </button>
+                <button class="language-btn" data-lang="es">
+                    <span class="flag">🇪🇸</span>
+                    <span>Español</span>
+                </button>
+                <button class="language-btn" data-lang="zh">
+                    <span class="flag">🇨🇳</span>
+                    <span>中文</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content (hidden initially) -->
+        <div class="main-content" id="main-content">
+            <header>
+                <h1>🌟 Daily Horoscope 🌟</h1>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="en">English</button>
+                    <button class="lang-btn" data-lang="hi">हिन्दी</button>
+                    <button class="lang-btn" data-lang="np">नेपाली</button>
+                    <button class="lang-btn" data-lang="es">Español</button>
+                    <button class="lang-btn" data-lang="zh">中文</button>
+                </div>
+            </header>
+
+            <!-- Logo Display -->
+            <div class="logo-container">
+                <img src="logo.png" alt="Horoscope Logo" class="logo-image">
+            </div>
+
+            <!-- Sideways Scrolling Animation -->
+            <div class="sideways-animation-container">
+                <div class="sideways-track" id="sideways-track">
+                    <!-- Zodiac signs will be added by JavaScript -->
+                </div>
+            </div>
+
+            <div class="section name-section" id="name-section">
+                <div class="input-group">
+                    <input type="text" id="name-input" placeholder="Enter your full name">
+                </div>
+                <button class="btn" id="save-name-btn">Get Your Horoscope</button>
+                <p class="helper-text">Enter your name to get your personalized horoscope</p>
+            </div>
+
+            <div class="section" id="know-sign-section">
+                <h3>Do you know your zodiac sign?</h3>
+                <div class="method-buttons">
+                    <button class="method-btn" id="yes-know-sign-btn">
+                        <div class="icon">✓</div>
+                        <span>Yes, I know my sign</span>
+                    </button>
+                    <button class="method-btn" id="no-know-sign-btn">
+                        <div class="icon">📅</div>
+                        <span>No, find from my birth date</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="section" id="zodiac-section">
+                <h3>Select Your Zodiac Sign</h3>
+                <div class="zodiac-grid">
+                    <button class="zodiac-btn" data-sign="aries">♈ Aries</button>
+                    <button class="zodiac-btn" data-sign="taurus">♉ Taurus</button>
+                    <button class="zodiac-btn" data-sign="gemini">♊ Gemini</button>
+                    <button class="zodiac-btn" data-sign="cancer">♋ Cancer</button>
+                    <button class="zodiac-btn" data-sign="leo">♌ Leo</button>
+                    <button class="zodiac-btn" data-sign="virgo">♍ Virgo</button>
+                    <button class="zodiac-btn" data-sign="libra">♎ Libra</button>
+                    <button class="zodiac-btn" data-sign="scorpio">♏ Scorpio</button>
+                    <button class="zodiac-btn" data-sign="sagittarius">♐ Sagittarius</button>
+                    <button class="zodiac-btn" data-sign="capricorn">♑ Capricorn</button>
+                    <button class="zodiac-btn" data-sign="aquarius">♒ Aquarius</button>
+                    <button class="zodiac-btn" data-sign="pisces">♓ Pisces</button>
+                </div>
+            </div>
+
+            <div class="section" id="dob-section">
+                <h3>Enter Your Date of Birth</h3>
+                <div class="dob-input-group">
+                    <input type="date" id="dob-input">
+                    <button class="btn" id="find-sign-btn">Find My Zodiac Sign</button>
+                </div>
+                <div class="detected-sign" id="detected-sign"></div>
+            </div>
+
+            <div class="loading">Loading your horoscope...</div>
+
+            <div class="error"></div>
+
+            <div class="section result">
+                <div class="result-header">
+                    <div class="user-info" id="user-name"></div>
+                    <div class="sign-info" id="sign-name"></div>
+                    <div class="date-info" id="date-range"></div>
+                </div>
+                <div class="horoscope-content" id="horoscope-text"></div>
+                <br><p>🕉️ ॐ नमः शिवाय 🕉️</p>
+                <button class="btn back-btn" onclick="backToLanguageSelection()" id="back-button">Check Another Horoscope</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

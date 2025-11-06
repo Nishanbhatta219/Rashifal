@@ -1,0 +1,530 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Language Selection Section */
+.language-section {
+    text-align: center;
+}
+
+.language-section h1 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.language-section h3 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.language-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.language-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.language-btn:hover {
+    background: white;
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.flag {
+    font-size: 1.5rem;
+}
+
+/* Main Content */
+.main-content {
+    display: none;
+}
+
+.main-content.show {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo Container - Replaces the rotating circle */
+.logo-container {
+    margin: 10px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-image {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Sideways Scrolling Animation */
+.sideways-animation-container {
+    margin: 10px 0 30px 0;
+    overflow: hidden;
+    position: relative;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sideways-track {
+    display: flex;
+    animation: scrollSideways 30s linear infinite;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.sideways-zodiac {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.sideways-zodiac:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sideways-symbol {
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+.sideways-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+@keyframes scrollSideways {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.sideways-track:hover {
+    animation-play-state: paused;
+}
+
+.lang-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+.section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.section.show {
+    display: block;
+}
+
+.name-section {
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.helper-text {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.method-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.method-btn {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.method-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.method-btn .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.dob-input-group {
+    display: flex;
+    gap: 10px;
+    align-items: end;
+}
+
+.dob-input-group input {
+    flex: 1;
+}
+
+.detected-sign {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e3f2fd;
+    border-radius: 5px;
+    display: none;
+}
+
+.detected-sign.show {
+    display: block;
+}
+
+.zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.zodiac-btn {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+}
+
+.zodiac-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.result {
+    text-align: center;
+}
+
+.result-header {
+    margin-bottom: 20px;
+}
+
+.user-info {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.sign-info {
+    color: #667eea;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.date-info {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.horoscope-content {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.6;
+    text-align: left;
+    white-space: pre-line;
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    display: none;
+}
+
+.loading.show {
+    display: block;
+}
+
+.error {
+    background: #ffeaa7;
+    color: #d63031;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+}
+
+.error.show {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .zodiac-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .method-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .language-buttons {
+        max-width: 250px;
+    }
+    
+    .language-btn {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .logo-container {
+        height: 150px;
+    }
+    
+    .logo-image {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .sideways-animation-container {
+        height: 70px;
+    }
+    
+    .sideways-zodiac {
+        margin: 0 15px;
+        padding: 6px 12px;
+        min-width: 100px;
+    }
+    
+    .sideways-symbol {
+        font-size: 1.3rem;
+    }
+    
+    .sideways-name {
+        font-size: 0.8rem;
+    }
+    
+    .lang-switcher {
+        gap: 8px;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .zodiac-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .language-section h1 {
+        font-size: 2rem;
+    }
+    
+    .language-buttons {
+        max-width: 200px;
+    }
+    
+    .language-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .flag {
+        font-size: 1.2rem;
+    }
+    
+    .logo-container {
+        height: 130px;
+    }
+    
+    .logo-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .sideways-animation-container {
+        height: 60px;
+    }
+    
+    .sideways-zodiac {
+        margin: 0 10px;
+        padding: 5px 10px;
+        min-width: 90px;
+    }
+    
+    .sideways-symbol {
+        font-size: 1.1rem;
+    }
+    
+    .sideways-name {
+        font-size: 0.7rem;
+    }
+    
+    .lang-switcher {
+        gap: 6px;
+    }
+    
+    .lang-btn {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+}
