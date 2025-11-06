@@ -677,7 +677,6 @@ async function fetchHoroscope(sign) {
         userName.textContent = currentUser;
         signName.textContent = zodiacNames[currentLanguage][sign];
         horoscopeText.textContent = horoscopeContent;
-        dateRange.textContent = dateRanges[currentLanguage][sign];
         
         loading.classList.remove('show');
         result.classList.add('show');
